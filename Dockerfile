@@ -1,8 +1,5 @@
 FROM "ubuntu"
 
-ENV http_proxy=$http_proxy
-ENV https_proxy=$http_proxy
-
 RUN apt-get update && yes | apt-get upgrade
 RUN mkdir -p /root/Project/tensorflow/models
 RUN apt-get install -y git python-pip
