@@ -33,8 +33,8 @@ WORKDIR /root/Project/tensorflow/models/research
 RUN protoc object_detection/protos/*.proto --python_out=.
 
 # Add Libraries to PYTHONPATH
-RUN export PYTHONPATH=/root/Project/tensorflow/models/research:/root/Project/tensorflow/models/research/slim
-RUN echo PYTHONPATH=$PYTHONPATH >> /root/.bashrc
+RUN export PYTHONPATH=/root/Project/tensorflow/models/research:/root/Project/tensorflow/models/research/slim:/root/Project/cocoapi/PythonAPI
+RUN echo PYTHONPATH=/root/Project/tensorflow/models/research:/root/Project/tensorflow/models/research/slim:/root/Project/cocoapi/PythonAPI >> /root/.bashrc
 
 RUN python /root/Project/tensorflow/models/research/setup.py build
 RUN python /root/Project/tensorflow/models/research/setup.py install
